@@ -9,7 +9,7 @@ module Spaceship
         if Spaceship::Tunes.client
           # Initialize new client if new or if team changed
           if @client.nil? || @client.team_id != Spaceship::Tunes.client.team_id
-            @client = Client.client_with_authorization_from(Spaceship::Tunes.client)
+            @client = Spaceship::TestFlight::Client.client_with_authorization_from(Spaceship::Tunes.client)
           end
         end
 
